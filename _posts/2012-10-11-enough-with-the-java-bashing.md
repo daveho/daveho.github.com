@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Enough with the Java bashing, already
+tags: [java, programming]
 ---
 
 Everyone has their favorite programming languages.  Lately, Java seems
