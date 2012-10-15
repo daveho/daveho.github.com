@@ -5,7 +5,7 @@ tags: [mc68008, electronics, retrocomputing]
 ---
 
 For a while I've been thinking about putting together a simple
-computer based on the MC68008 microcontroller.  The MC68008 is
+computer based on the MC68008 microprocessor.  The MC68008 is
 a variant of the [Motorola 68000](http://en.wikipedia.org/wiki/Motorola_68000),
 a famous and widely used CPU series found in the original (pre-PowerPC)
 Macs, the Amiga, Atari ST, many and early Unix workstations.
