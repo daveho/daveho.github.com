@@ -102,7 +102,7 @@ To allow this signal to be bidirectional, all devices connected to
 it must use *open collector* output.  An open collector output
 is normally held high using a pull-up resistor.  Any connected device
 may force the line low by sinking current, pulling the voltage
-down to a low logic level.  Open drain outputs are sometimes
+down to a low logic level.  Open collector outputs are sometimes
 called "wired-or" because (for an active-low signal such as **-RESET**)
 any device outputting a low level causes any devices reading
 the signal to see a logic low.
