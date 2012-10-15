@@ -43,7 +43,7 @@ it was a fairly powerful CPU, and was used in one well-known
 computer, the [Sinclair QL](http://en.wikipedia.org/wiki/Sinclair_ql)
 (which famously was one of the computers that
 [Linus Torvalds](http://en.wikipedia.org/wiki/Linus_torvalds)
-learned to program on).  For those of us who where there,
+learned to program on).  For those of us who were there,
 the early years of home computing have a magic that is difficult
 to describe.  Building something based on that technology
 recaptures some of that magic.
