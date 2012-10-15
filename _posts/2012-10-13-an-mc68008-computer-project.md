@@ -34,7 +34,7 @@ integrated, and you can program them in-curcuit using very simple
 hardware.  This makes them so easy to use that they're almost *too* easy.
 Putting together a system based on the MC68008 is a challenge, but
 one that isn't so difficult as to be infeasible for a relative
-novice.
+novice.  (Famous last words, eh?)
 
 Probably the most important reason I wanted to build something
 based on the MC68008 is that it is from the era (the early 80s)
