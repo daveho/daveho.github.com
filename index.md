@@ -19,8 +19,6 @@ I am co-developer of the [FindBugs](http://findbugs.sourceforge.net) static
 analysis tool.  I'm currently working on [CloudCoder](http://cloudcoder.org),
 an [open source](http://github.com/daveho/CloudCoder) web-based programming exercise system.
 
-There is an [Atom feed](/atom.xml).
-
 # Posts
 
 <ul class="posts">
