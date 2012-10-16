@@ -9,15 +9,17 @@ tagline: Random Thoughts and Such
 
 <img style="float: right; width: 150px;" src="img/selfPortrait.jpg" alt="Self portrait" />
 
-This is my blog.
+Welcome to my blog!
 
 I teach computer science at [York College of Pennsylvania](http://www.ycp.edu).
-I post about programming, education, music, electronics, and other random
+In this blog I post about programming, education, music, electronics, and other random
 topics.
 
 I am co-developer of the [FindBugs](http://findbugs.sourceforge.net) static
 analysis tool.  I'm currently working on [CloudCoder](http://cloudcoder.org),
 an [open source](http://github.com/daveho/CloudCoder) web-based programming exercise system.
+My main hobby is digital electronics, in particular building things
+with obsolete 1980's microcomputer technology.
 
 # Posts
 
@@ -26,3 +28,9 @@ an [open source](http://github.com/daveho/CloudCoder) web-based programming exer
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
+
+# Links
+
+[Old blog, no longer updated](http://fullofleaves.blogspot.com/)
+
+[My home page](http://faculty.ycp.edu/~dhovemey)
