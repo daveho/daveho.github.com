@@ -28,5 +28,5 @@ The next step will be to add a ROM, so that I can have the CPU
 execute actual code, and some kind of output device so that the
 code can provide some indication that it is running correctly.
 The output device will probably be an 8 bit register
-(74hct74 or similar) connected to a bank of LEDs:
+(74hct374 or similar) connected to a bank of LEDs:
 in other words, [blinkenlights](http://en.wikipedia.org/wiki/Blinkenlights)!
