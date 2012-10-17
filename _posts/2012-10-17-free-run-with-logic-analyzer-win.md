@@ -19,7 +19,7 @@ Yay logic analyzer!
 
 An additional benefit from this experiment was using a really
 fancy Agilent E3648A power supply to power the circuit,
-from which I learned that the circuit is drawing 0.024 amps
+from which I learned that the circuit is drawing 0.204 amps
 of current.  I wouldn't mind owning one of these myself,
 but they'll set you back about $1,000.
 
