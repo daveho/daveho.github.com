@@ -56,7 +56,10 @@ Execute using the command
 in some scratch directory.
 
 You may find that various development packages (such as **libgmp-dev**)
-must be installed.
+must be installed before the build will succeed.
+
+Note that all of the tools will be prefixed with **m68k-unknown-elf-**.
+So, for example, gcc is **m68k-unknown-elf-gcc**.
 
 I used the latest version of binutils, but an older version of
 gcc, based on [a gcc bug report](http://gcc.gnu.org/bugzilla/show_bug.cgi?id=42557)
