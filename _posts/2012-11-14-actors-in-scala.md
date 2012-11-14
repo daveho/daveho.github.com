@@ -242,7 +242,7 @@ and returns a future which, if applied, waits for a reply back from that actor. 
 is why the **Mandelbrot** actor keeps track of the sender of the original
 **Get** message: that is the actor to which the final result will be delivered,
 although thanks to **!!** it's a special actor that can communicate back
-to the non-actor code that started the computation.  (I'm not precisely how
+to the non-actor code that started the computation.  (I'm not sure precisely how
 this works behind the scenes.)
 
 One minor issue is that the future's type does not specify what type of
