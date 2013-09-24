@@ -18,9 +18,6 @@ topics.
 I am co-developer of the [FindBugs](http://findbugs.sourceforge.net) static
 analysis tool.  I'm currently working on [CloudCoder](http://cloudcoder.org),
 an [open source](http://github.com/daveho/CloudCoder) web-based programming exercise system.
-My main hobby is digital electronics, in particular building things
-with obsolete 1980's microcomputer technology.  In my spare time I'm working on
-[an MC68008-based computer](ya68k.html).
 
 # Posts
 
