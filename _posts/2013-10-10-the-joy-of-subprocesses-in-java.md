@@ -11,7 +11,7 @@ To support C/C++ exercises in [CloudCoder](http://cloudcoder.org),
 we compile each submission using g++, run the resulting executable
 for each test case, and check the result of each execution.
 
-Running an OS-level process in Java is both simple a complicated.
+Running an OS-level process in Java is both simple and complicated.
 The **java.lang.Process** represents a subprocess, and provides reasonable
 flexibility.  You can specify the executable and its arguments, define
 environment variables, and communicate with the process by writing to
