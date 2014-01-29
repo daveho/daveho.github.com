@@ -1,0 +1,56 @@
+html, body {
+	margin: 0px 0px;
+	padding: 0px 0px;
+	border: 0px 0px;
+	height: 100%;
+}
+
+html {
+	background: #87ceeb;
+}
+
+
+div.content {
+	width: 720px;
+	margin: 0 auto;
+	min-height: 100%;
+	font-size: 18px;
+	font-family: "Georgia", serif;
+	background: white;
+	padding: 0px 40px;
+	border-left: 10px solid #1e90ff;
+	border-right: 10px solid #1e90ff;
+}
+
+div.pageheader {
+	background: #eee;
+	border: 1px solid transparent;
+	border-radius: 32px;
+	padding: 10px 20px;
+}
+
+div.pageheader div.heading {
+	color: #228;
+	font-size: 200%;
+	font-weight: bold;
+}
+
+div.pageheader div.tagline {
+	color: #222;
+	font-style: italic;
+}
+
+pre {
+	margin-left: 40px;
+	font-size: 14px;
+}
+
+h1 {
+	color: #228;
+	border-bottom: 2px solid #228;
+}
+
+h2, h3 {
+	color: #228;
+	border-bottom: 1px solid #228;
+}

@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [cloudcoder, mc68008]
 ---
-{% include JB/setup %}
 
 So I haven't posted anything on my blog for almost one year.
 So, I thought an update, and a resolution to post stuff more

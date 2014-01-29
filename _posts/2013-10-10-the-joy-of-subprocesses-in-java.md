@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [java, cloudcoder]
 ---
-{% include JB/setup %}
 
 To support C/C++ exercises in [CloudCoder](http://cloudcoder.org),
 we compile each submission using g++, run the resulting executable

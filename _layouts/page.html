@@ -1,5 +1,24 @@
----
-layout: default
----
-{% include JB/setup %}
-{% include themes/twitter/page.html %}
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>{{ page.title }}</title>
+		<link rel="stylesheet" href="{{ site.url }}/css/blog.css" />
+		<link rel="stylesheet" href="{{ site.url }}/css/syntax.css" />
+	</head>
+
+	<body>
+		<div class="content">
+			<div class="spacer">&nbsp;</div>
+			<div class="pageheader">
+				<div class="heading">{{ page.title }}</div>
+				<div class="tagline">{{ page.tagline }}</div>
+			</div>
+			{{ content }}
+			<div class="spacer">&nbsp;</div>
+		</div>
+	</body>
+</html>
+
+<!-- vim:set ts=2: -->
