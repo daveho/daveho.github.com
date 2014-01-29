@@ -3,7 +3,6 @@ layout: page
 title: "Ya68k"
 description: ""
 ---
-{% include JB/setup %}
 
 I am working on a small computer system based on the MC68008 CPU
 called "ya68k".  (**Y**et **A**nother **68K**.)
