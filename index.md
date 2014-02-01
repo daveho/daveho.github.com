@@ -13,7 +13,7 @@ In this blog I post about programming, education, music, electronics, and other 
 topics.
 
 I'm currently working on [CloudCoder](http://cloudcoder.org),
-an [open source](http://github.com/daveho/CloudCoder) web-based programming exercise system.
+an [open source](http://github.com/cloudcoderdotorg/CloudCoder) web-based programming exercise system.
 
 # Posts
 
