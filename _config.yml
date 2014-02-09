@@ -6,4 +6,7 @@ url: "http://daveho.github.io"
 paginate: 10
 
 markdown: rdiscount
+rdiscount:
+  extensions: [smart]
+
 pygments: true
