@@ -3,7 +3,7 @@ layout: post
 title: "Hacking on the Raspberry Pi"
 description: ""
 category: 
-tags: [electronics, raspberrypi, hacking]
+tags: [carpi, electronics, raspberrypi, hacking]
 ---
 
 \[Note for the impatient: there is a picture if you scroll down.\]
