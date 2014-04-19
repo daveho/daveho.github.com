@@ -49,9 +49,9 @@ I encountered a few interesting technical issues while working on the software, 
 
 The Raspberry Pi-based system replaces a Philips PD7012 dual screen DVD player.  The good news here is that the slave screen from this system is a bog-standard composite video monitor, so after ordering another identical slave screen from eBay for $25, I had the two screens I needed.  I used a Boss BV-AM5 video signal amplifier to ensure a full-strength signal to both screens.  (Perhaps a passive splitter would have sufficed, but it was only $11.)
 
-One interesting characteristic of the PD7012 slave screens is that they have a single 2.5mm input for both video and stereo audio.  As it turns out, the cable that allows the master unit of the PD7012 to connect to connect to an output device (such as a TV) also works fine for feeding input (both video and audio) to the slave screen.  I ordered two such cables from eBay, which together connect the outputs of the BV-AM5 to the slave screens.  I only used the video signal, since I'm not using the audio output of the slave screens.
+One interesting characteristic of the PD7012 slave screens is that they have a single 2.5mm input for both video and stereo audio.  As it turns out, the cable that allows the master unit of the PD7012 to connect to connect to an output device (such as a TV) also works fine for feeding input (both video and audio) to the slave screen.  I ordered two such cables from eBay, which together connect the outputs of the BV-AM5 to the slave screens.  I only used the video signal, since I'm not using the speakers of the slave screens.
 
-For audio, I am using the aux input of the car stereo.  We have a base model 2007 Honda Fit, so we needed to have a third-party aux adapter installed.  ([Wyvon Audio Installations](http://wyvonaudio.com/) did the installation, for which I am grateful, since removing the stereo on a 2007 Fit is not a task for the faint of heart.)
+For audio, I am using the aux input of the car stereo.  We have a base model 2007 Honda Fit (which lacks an aux input as standard equipment), so we needed to have a third-party aux adapter installed.  ([Wyvon Audio Installations](http://wyvonaudio.com/) did the installation, for which I am grateful, since removing the stereo on a 2007 Fit is not a task for the faint of heart.)
 
 Here is a schematic of the entire setup:
 
