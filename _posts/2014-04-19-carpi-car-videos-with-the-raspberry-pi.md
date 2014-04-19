@@ -8,7 +8,7 @@ tags: [carpi, electronics, raspberrypi, hacking]
 
 # No more DVDs!
 
-As I [mentioned previously](/2014/01/29/hacking-on-the-raspberry-pi.html), having a way to play movies in the car is great for long car trips, but car DVD players are, let's say, frustrating in many ways:
+As I [mentioned previously](/2014/01/29/hacking-on-the-raspberry-pi.html), having a way to play movies in the car is great for long car trips, but car DVD players are, shall we say, frustrating in various ways:
 
 * A parent must unbuckle and turn around to put in a disc, operate the menu, etc.
 * Long, long waits before you actually reach the root menu
@@ -19,7 +19,7 @@ Over my winter break I put together a [Raspberry Pi-based solution for playing m
 
 ## Hardware
 
-The concept for the hardware was to combine the Raspberry Pi with a user interface (display and controls) and package them in a form that would be easy for the parents in the front of the car to use.  I initially considered using a touchscreen, but eventually decided to go with a plain LCD and pushbuttons.  The LCD turned out to be easy: [fbtft](https://github.com/notro/fbtft) supports lots of small/cheap LCDs, and I scored an ILI9340-based LCD on eBay for about $6, which worked perfectly with fbtft.  The pushbuttons turned out to more difficult (high-quality PCB-mount pushbuttons are essentially impossible to find), but eventually I arrived at the idea of using Cherry MX keyswitches, which worked out extremely well.  After a bit of breadboarding (using an attiny4313 for debouncing the keyswitches), I designed a PCB with Eagle CAD, sent it off to [OSHPark](http://www.oshpark.com), threw everything together in a laser-cut acrylic enclosure (fabbed by [Pololu](http://www.pololu.com)), and presto, the device:
+The concept for the hardware was to combine the Raspberry Pi with a user interface (display and controls) and package them in a form that would be easy for the parents in the front of the car to use.  I initially considered using a touchscreen, but eventually decided to go with a plain LCD and pushbuttons.  The LCD turned out to be easy: [fbtft](https://github.com/notro/fbtft) supports lots of small/cheap LCDs, and I scored an ILI9340-based LCD on eBay for about $6, which worked perfectly with fbtft.  The pushbuttons turned out to more difficult (high-quality PCB-mount pushbuttons are essentially impossible to find), but eventually I arrived at the idea of using Cherry MX keyswitches, which worked out extremely well.  After a bit of breadboarding (using an attiny4313 for debouncing the keyswitches), I designed a PCB with Eagle CAD, sent it off to [OSHPark](http://www.oshpark.com), threw everything together in a custom laser-cut acrylic enclosure (fabbed by [Pololu](http://www.pololu.com)), and presto, the device:
 
 > <a href="https://raw2.github.com/daveho/carpi/master/enclosure/pic-big.jpg"><img src="https://raw2.github.com/daveho/carpi/master/enclosure/pic-sm.jpg" /></a>
 
@@ -47,7 +47,7 @@ I encountered a few interesting technical issues while working on the software, 
 
 The Raspberry Pi-based system replaces a Philips PD7012 dual screen DVD player.  The good news here is that the slave screen from this system is a bog-standard composite video monitor, so after ordering another identical slave screen from eBay for $25, I had the two screens I needed.  I used a Boss BV-AM5 video signal amplifier to ensure a full-strength signal to both screens.  (Perhaps a passive splitter would have sufficed, but it was only $11.)
 
-One interesting characteristic of the PD7012 slave screens is that they have a single 2.5mm input for both video and stereo audio.  As it turns out, the cable that allows the master unit of the PD7012 to connect to connect to an output device (such as a TV) also works fine for feeding input (both video and audio) to the slave screen.  I ordered two such cables from eBay, which connects the outputs of the BV-AM5 to the slave screens.  I only used the video signal, since I'm not using the audio output of the slave screens.
+One interesting characteristic of the PD7012 slave screens is that they have a single 2.5mm input for both video and stereo audio.  As it turns out, the cable that allows the master unit of the PD7012 to connect to connect to an output device (such as a TV) also works fine for feeding input (both video and audio) to the slave screen.  I ordered two such cables from eBay, which together connect the outputs of the BV-AM5 to the slave screens.  I only used the video signal, since I'm not using the audio output of the slave screens.
 
 For audio, I am using the aux input of the car stereo.  We have a base model 2007 Honda Fit, so we needed to have a third-party aux adapter installed.  ([Wyvon Audio Installations](http://wyvonaudio.com/) did the installation, for which I am grateful, since removing the stereo on a 2007 Fit is not a task for the faint of heart.)
 
@@ -57,7 +57,7 @@ Here is a schematic of the entire setup:
 
 The "piece of wood" serves two functions: anchoring the video signal amplifier, and distributing power to the devices that need 12V.  One of the benefits of working at an engineering school is access to all kinds of tools and connectors, and I was able to use some heat-shrink tubing, a terminal block, and some ring terminals to achieve a relatively neat end result:
 
-> piece of wood picture
+> <a href="/img/carpi-pieceofwood.jpg"><img alt="piece of wood" src="/img/carpi-pieceofwood-sm.jpg" /></a>
 
 This sits in a slot between the front seats that seems to have been designed to hold CDs, and since the piece of wood is 5"x5", it fits in this slot perfectly:
 
@@ -67,8 +67,24 @@ This sits in a slot between the front seats that seems to have been designed to 
 
 Heck, yeah!
 
-> <a href="/img/carpi-demo.jpg"><img alt="piece of wood, in place" src="/img/carpi-demo-sm.jpg" /></a>
+> <a href="/img/carpi-demo.jpg"><img alt="CarPi demo" src="/img/carpi-demo-sm.jpg" /></a>
 
 Audience reactions have been positive:
 
-> <a href="/img/carpi-thumbsup.jpg"><img alt="piece of wood, in place" src="/img/carpi-thumbsup-sm.jpg" /></a>
+> <a href="/img/carpi-thumbsup.jpg"><img alt="CarPi audience reaction" src="/img/carpi-thumbsup-sm.jpg" /></a>
+
+## Things that could have worked better
+
+With any project, there is always room for improvement.
+
+One problem I didn't anticipate is that the audio output on the Raspberry Pi isn't that great.  There is definitely some noise, which seems to be worse when the car is traveling at highway speeds.  I'm a software guy, and my knowledge of analog electronics is virtually nil, so I'd be interested to hear an explanation from someone knowledgable.  However, in the end the sound quality is still a big improvement over the built-in speakers on the PD7012.  At some point I may experiment with using a USB audio adapter to see if it would improve the sound quality.
+
+Another possible improvement would be simplifying the cabling.  The Pi requires three cables: USB (power), audio, and video.  This creates a bit of a rats nest in the front seat.
+
+One nice feature of the original DVD player was that it could resume playback automatically after being powered down.  My UI has commands for seeking by +/- 30 sec and +/- 10 minutes, so it's fairly easy to get back to the correct place, but it would be nice for this to happen automatically.  The good news is that this could be hacked into the software fairly easily: just periodically save the current file and playback position to a file.
+
+## Final thoughts
+
+Overall, this was a fun project, and I'm quite satisfied with the result.
+
+Here is one final thought: the Raspberry Pi is awesome.  When I first heard about it, I thought it sounded awesome, and after the experience of using it in this project, it is *much* more awesome thatn I expected.  It is a full Linux desktop and software development system.  It is a server that is happy to run headless when connected to your network.  It is an embedded board with a price point that allows you to drop it into a project where you might otherwise have used a microcontroller.  *It is all of these things at the same time.*  That is *f\*\*\*ing* **magic**.
