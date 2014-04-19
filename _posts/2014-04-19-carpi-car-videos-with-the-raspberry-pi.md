@@ -15,7 +15,9 @@ As I [mentioned previously](/2014/01/29/hacking-on-the-raspberry-pi.html), havin
 * DRM in recent DVDs means they often don't play correctly (I'm looking at you, [Disney](http://www.disney.com))
 * Unreliability (disc won't load, take it out, brush it off, cross fingers, put it back in, repeat)
 
-Over my winter break I put together a [Raspberry Pi-based solution for playing movies in the car](https://github.com/daveho/carpi).  In this blog post I will describe the whole setup, link to relevant details, and reflect on the project and how it could be improved.  Overall, it works quite well and is (IMO) far less hassle than DVDs.
+Over my winter break I put together a [Raspberry Pi-based solution for playing movies in the car](https://github.com/daveho/carpi).  In this post I will describe the whole setup, link to relevant details, and reflect on the project and how it could be improved.  Overall, it works quite well and is (IMO) far less hassle than DVDs.
+
+If you're interested in all of the gory details, there is a [build log](https://raw.githubusercontent.com/daveho/carpi/master/notes/log.txt).
 
 ## Hardware
 
@@ -39,7 +41,7 @@ I wrote up some [documentation](https://github.com/daveho/carpi/wiki/Using) desc
 
 It's not fancy, but it gets the job done.
 
-(Believe it or not, that is the famous Sun 12x22 console font.  I started my professional career programming on a [Sparcstation IPX](http://www.obsolyte.com/sun_ipx/), so it's oddly satisfying to see this font again in a new context.)
+(Note that the text in the screenshot uses the famous Sun 12x22 console font.  I started my professional career programming on a [Sparcstation IPX](http://www.obsolyte.com/sun_ipx/), so it's oddly satisfying to see this font again in a new context.)
 
 I encountered a few interesting technical issues while working on the software, including figuring out how to do interrupt-driven GPIO from C++ (pretty easy, as it turned out) and how to keep the LCD backlight from powering down (quite hard: I had to use the uinput device to make the button presses register as actual keypresses so that the backlight would wake up).
 
@@ -77,7 +79,7 @@ Audience reactions have been positive:
 
 With any project, there is always room for improvement.
 
-One problem I didn't anticipate is that the audio output on the Raspberry Pi isn't that great.  There is definitely some noise, which seems to be worse when the car is traveling at highway speeds.  I'm a software guy, and my knowledge of analog electronics is virtually nil, so I'd be interested to hear an explanation from someone knowledgable.  However, in the end the sound quality is still a big improvement over the built-in speakers on the PD7012.  At some point I may experiment with using a USB audio adapter to see if it would improve the sound quality.
+One problem I didn't anticipate is that the audio output on the Raspberry Pi isn't that great.  There is definitely some noise, which seems to be worse when the car is traveling at highway speeds.  I'm a software guy, and my knowledge of analog electronics is virtually nil, so I'd be interested to hear an explanation from someone knowledgeable.  However, in the end the sound quality is still a big improvement over the built-in speakers on the PD7012.  At some point I may experiment with using a USB audio adapter to see if it would improve the sound quality.
 
 Another possible improvement would be simplifying the cabling.  The Pi requires three cables: USB (power), audio, and video.  This creates a bit of a rats nest in the front seat.
 
