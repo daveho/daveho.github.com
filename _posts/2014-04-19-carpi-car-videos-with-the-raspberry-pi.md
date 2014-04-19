@@ -75,13 +75,13 @@ Audience reactions have been positive:
 
 > <a href="/img/carpi-thumbsup.jpg"><img alt="CarPi audience reaction" src="/img/carpi-thumbsup-sm.jpg" /></a>
 
-## Things that could have worked better
+## Things that could work better
 
-With any project, there is always room for improvement.
+As with all projects, there is room for improvement.
 
-One problem I didn't anticipate is that the audio output on the Raspberry Pi isn't that great.  There is definitely some noise, which seems to be worse when the car is traveling at highway speeds.  I'm a software guy, and my knowledge of analog electronics is virtually nil, so I'd be interested to hear an explanation from someone knowledgeable.  However, in the end the sound quality is still a big improvement over the built-in speakers on the PD7012.  At some point I may experiment with using a USB audio adapter to see if it would improve the sound quality.
+One problem I didn't anticipate is that the audio output on the Raspberry Pi isn't that great.  There is definitely some noise, which seems to be worse when the car is traveling at highway speeds.  I'm a software guy, and my knowledge of analog electronics is virtually nil, so I'd be interested to hear an explanation from someone knowledgeable.  However, the sound quality is still a big improvement over the built-in speakers on the PD7012.  At some point I may experiment with using a USB audio adapter to see if it would improve the sound quality.
 
-Another possible improvement would be simplifying the cabling.  The Pi requires three cables: USB (power), audio, and video.  This creates a bit of a rats nest in the front seat.
+Another possible improvement would be simplifying the cabling.  The Pi requires three cables: USB (power), audio, and video.  This creates a bit of a rats nest in the front seat, but it's not too bad.
 
 One nice feature of the original DVD player was that it could resume playback automatically after being powered down.  My UI has commands for seeking by +/- 30 sec and +/- 10 minutes, so it's fairly easy to get back to the correct place, but it would be nice for this to happen automatically.  The good news is that this could be hacked into the software fairly easily: just periodically save the current file and playback position to a file.
 
