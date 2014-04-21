@@ -41,8 +41,6 @@ I wrote up some [documentation](https://github.com/daveho/carpi/wiki/Using) desc
 
 It's not fancy, but it gets the job done.
 
-(Note that the text in the screenshot uses the famous Sun 12x22 console font.  I started my professional career programming on a [Sparcstation IPX](http://www.obsolyte.com/sun_ipx/), so it's oddly satisfying to see this font again in a new context.)
-
 I encountered a few interesting technical issues while working on the software, including figuring out how to do interrupt-driven GPIO from C++ (pretty easy, as it turned out) and how to keep the LCD backlight from powering down (quite hard: I had to use the uinput device to make the button presses register as actual keypresses so that the backlight would wake up).
 
 ## AV setup
