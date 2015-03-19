@@ -23,7 +23,7 @@ If you're interested in all of the gory details, there is a [build log](https://
 
 The concept for the hardware was to combine the Raspberry Pi with a user interface (display and controls) and package them in a form that would be easy for the parents in the front of the car to use.  I initially considered using a touchscreen, but eventually decided to go with a plain LCD and pushbuttons.  The LCD turned out to be easy: [fbtft](https://github.com/notro/fbtft) supports lots of small/cheap LCDs, and I scored an ILI9340-based LCD on eBay for about $6, which worked perfectly with fbtft.  The pushbuttons turned out to more difficult (high-quality PCB-mount pushbuttons are essentially impossible to find), but eventually I arrived at the idea of using Cherry MX keyswitches, which worked out extremely well.  After a bit of breadboarding (using an attiny4313 for debouncing the keyswitches), I designed a PCB with Eagle CAD, sent it off to [OSHPark](http://www.oshpark.com), threw everything together in a custom laser-cut acrylic enclosure (fabbed by [Pololu](http://www.pololu.com)), and presto, the device:
 
-> <a href="https://raw2.github.com/daveho/carpi/master/enclosure/pic-big.jpg"><img src="https://raw2.github.com/daveho/carpi/master/enclosure/pic-sm.jpg" /></a>
+> <a href="https://raw.githubusercontent.com/daveho/carpi/master/enclosure/pic-big.jpg"><img src="https://raw.githubusercontent.com/daveho/carpi/master/enclosure/pic-sm.jpg" /></a>
 
 You can read the [instructions for building it](https://github.com/daveho/carpi/wiki/Building) if you're interested.
 
