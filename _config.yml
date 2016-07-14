@@ -3,10 +3,8 @@ description: ""
 
 url: "http://daveho.github.io"
 
-paginate: 10
+markdown: kramdown
 
-markdown: rdiscount
-rdiscount:
-  extensions: [smart]
-
-pygments: true
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
