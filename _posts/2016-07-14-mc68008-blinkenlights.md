@@ -131,7 +131,7 @@ Just for fun, here's a picture of the whole thing in its current form (click for
 
 > <a href="/img/blinkenlights.jpg"><img alt="complete circuit on breadboard" style="width: 560px;" src="/img/blinkenlights.jpg"></a>
 
-White wires are the clock signal, light blue wires are control signals from the CPU, orange wires are outputs from the glue logic, green wires are the address bus, purple wires are the data bus.
+White wires are the reset and clock signals, light blue wires are control signals from the CPU, orange wires are outputs from the glue logic, green wires are the address bus, purple wires are the data bus.
 
 ## Conclusions, what next
 
