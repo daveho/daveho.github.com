@@ -32,15 +32,15 @@ So why is this a problem?
 
 ## I hate parser generators
 
-The "traditional" way to implement a C parser is to use a parser generator such as [Bison](https://www.gnu.org/software/bison/).  The parsing algorithm most commonly used in parser generators is LALR(1), which is a "bottom up" algorithm.  Bottom up parsers can deal with difficulties like abstract vs. concrete declarator resolution fairly easily.  However, I am not a fan of parser generators.  My main objection to them is that you cede all control over parsing to the generated parser code, making error reporting and recovery quite complicated.  Also, it is all too easy too easy to write grammar rules that can't be handled by the parsing algorithm (e.g., the dreaded "reduce/reduce conflict" for LALR(1) parser generators.)  In any case, I'm not aware of any parser generators for Clojure.(1)
+The "traditional" way to implement a C parser is to use a parser generator such as [Bison](https://www.gnu.org/software/bison/).  The parsing algorithm most commonly used in parser generators is LALR(1), which is a "bottom up" algorithm.  Bottom up parsers can deal with difficulties like abstract vs. concrete declarator resolution fairly easily.  However, I am not a fan of parser generators.  My main objection to them is that you cede all control over parsing to the generated parser code, making error reporting and recovery quite complicated.(1)  Also, it is all too easy to write grammar rules that can't be handled by the parsing algorithm (e.g., the dreaded "reduce/reduce conflict.")  In any case, I'm not aware of any parser generators for Clojure.(2)
 
-What I *do* like is parsing by recursive descent.  This is a "top down" approach where the parser starts with the grammar's start symbol, and then applies productions to transform the start symbol into the sequence of input tokens being parsed.  Recursive descent parsers are *predictive* because they can look ahead in the input token sequence to determine which production to apply next.  This tends to work well in practice, as long as the grammar is structured in a way that the correct production can be predicted using finite lookahead (1 or 2 tokens, typically).  For "reasonable" grammars, finding the correct heuristics to guide selection of productions tends to be fairly easy.
+What I *do* like is parsing by recursive descent.  This is a "top down" approach where the parser starts with the grammar's start symbol, and then applies productions to transform the start symbol into the sequence of input tokens being parsed.  Recursive descent parsers are *predictive* because they look ahead in the input token sequence to determine which production to apply next.  This tends to work well in practice, as long as the grammar is structured in a way that the correct production can be predicted using finite lookahead (1 or 2 tokens, typically).  For "reasonable" grammars, finding the correct heuristics to guide selection of productions tends to be fairly easy.
 
-One really awesome advantage of recursive descent is that it is easy to embed specialized parsing algorithms in a recursive descent parser.  For example, parsing infix expressions can be awkward to do by recursive descent, because left associative operators require left recursive productions, which can't be directly implemented in a recursive descent parser.  There are [workarounds](https://ycpcs.github.io/cs340-fall2016/lectures/lecture05.html), but they greatly complicate the grammar.  However, there are specialized parsing algorithms for infix expressions, such as [precedence climbing](http://en.wikipedia.org/wiki/Operator-precedence_parser), which make parsing infix expressions incredibly easy.  So, when a recursive descent parser needs to parse an infix expression, it can just switch over to a more suitable algorithm (e.g., precedence climbing) for the extent of the infix expression, and then resume recursive descent.
+One really awesome advantage of recursive descent is that it is easy to embed specialized parsing algorithms.  For example, parsing infix expressions can be awkward to do by recursive descent, because left associative operators require left recursive productions, which can't be directly implemented in a recursive descent parser.  There are [workarounds](https://ycpcs.github.io/cs340-fall2016/lectures/lecture05.html), but they greatly complicate the grammar.  However, there are specialized parsing algorithms for infix expressions, such as [precedence climbing](http://en.wikipedia.org/wiki/Operator-precedence_parser), which make parsing infix expressions incredibly easy.  So, when a recursive descent parser needs to parse an infix expression, it can just switch over to a more suitable algorithm (e.g., precedence climbing) for the extent of the infix expression, and then resume recursive descent.
 
 Recursive descent and precedence climbing are powerful tools.  Surely, they can handle C...right?
 
-The answer of course, is yes, they can.  The bad news is that C's "official" grammar has constructs, such as the parameter declaration rules shown above, where finite lookahead is insufficient to determine which production to apply.  So what do we do?
+The answer, of course, is yes, they can.  The bad news is that C's "official" grammar has constructs, such as the parameter declaration rules shown above, where finite lookahead is insufficient to determine which production to apply.  So what do we do?
 
 ## Applying some moderate cleverness
 
@@ -61,7 +61,75 @@ I didn't mention one important technique for handling cases where finite lookahe
 
 Because Clojure is a functional language, without mutable data, it would be crazy easy to implement backtracking.  I actually did contemplate using it as a workaround for the init declarator vs. function definition problem.  However, recursive backtracking wastes time in cases where part of a parse has to be abandoned.  Depending on how many backtracking points the parser has, parsing time could become exponential.  By avoiding backtracking, I can guarantee that the parser will complete in O(*n*) time for input of size *n*.
 
-## What's left to do
+## What it does, what's left to do
+
+To give you a sense of what the output of the parser looks like, here's an example input:
+
+{% highlight c %}
+int main(void) {
+    printf("Hello, world!\n");
+}
+{% endhighlight %}
+
+Here is the resulting parse tree (note that there's a lot of deep nesting: you'll have to scroll to see the whole thing):
+
+    :declaration_list
+    +--:declaration
+       +--:declaration_specifiers
+       |  +--:type_specifier
+       |     +--:kw_int["int"] :lnum=1 :cnum=1
+       +--:opt_init_declarator_list
+          +--:init_declarator_list
+             +--:function_definition
+                +--:declarator
+                |  +--:opt_pointer
+                |  +--:direct_declarator
+                |     +--:direct_declarator_base
+                |     |  +--:identifier["main"] :lnum=1 :cnum=5
+                |     +--:opt_declarator_suffix_list
+                |        +--:declarator_suffix_list
+                |           +--:declarator_suffix
+                |              +--:lparen["("] :lnum=1 :cnum=9
+                |              +--:parameter_type_list
+                |              |  +--:parameter_list
+                |              |     +--:parameter_declaration
+                |              |        +--:declaration_specifiers
+                |              |           +--:type_specifier
+                |              |              +--:kw_void["void"] :lnum=1 :cnum=10
+                |              +--:rparen[")"] :lnum=1 :cnum=14
+                +--:compound_statement
+                   +--:lbrace["{"] :lnum=1 :cnum=16
+                   +--:opt_block_item_list
+                   |  +--:block_item_list
+                   |     +--:block_item
+                   |        +--:statement
+                   |           +--:expression_statement
+                   |              +--:expression
+                   |              |  +--:assignment_expression
+                   |              |     +--:conditional_expression
+                   |              |        +--:cast_expression
+                   |              |           +--:unary_expression
+                   |              |              +--:postfix_expression
+                   |              |                 +--:primary
+                   |              |                 |  +--:identifier["printf"] :lnum=2 :cnum=5
+                   |              |                 +--:postfix_suffix_list
+                   |              |                    +--:function_call
+                   |              |                       +--:lparen["("] :lnum=2 :cnum=11
+                   |              |                       +--:opt_argument_expression_list
+                   |              |                       |  +--:argument_expression_list
+                   |              |                       |     +--:assignment_expression
+                   |              |                       |        +--:conditional_expression
+                   |              |                       |           +--:cast_expression
+                   |              |                       |              +--:unary_expression
+                   |              |                       |                 +--:postfix_expression
+                   |              |                       |                    +--:primary
+                   |              |                       |                       +--:literal
+                   |              |                       |                          +--:string_literal[""Hello, world!\n""] :lnum=2 :cnum=12
+                   |              |                       +--:rparen[")"] :lnum=2 :cnum=29
+                   |              +--:semicolon[";"] :lnum=2 :cnum=30
+                   +--:rbrace["}"] :lnum=3 :cnum=1
+
+This gives you a sense of the complexity of parsing even very simple C programs.
 
 My C parser is still at a very early stage.  In particular, it doesn't handle
 
@@ -76,11 +144,11 @@ I am a very, very late convert to functional programming.  This is the first sub
 
 I won't subject you to a lot of gushing about how great Clojure is (although it is great.)  Let me instead relate one anecdote that I think explains what I like about Clojure.
 
-The output of my parser is, more or less, a *parse tree*.  The structure of this tree corresponds to the exact grammar productions used in the derivation of the input token sequence from the grammar's start symbol.  As such, it has lots of information that isn't really necessary.  For example, every semicolon in the input is dutifully represented as a node in the parse tree, even though semicolons have no significance semantically.  Also, recursive grammar rules for lists produce trees that are essentially linked lists.  It is nice to have a "flat" representation of such constructs; for example, if there is a sequence of statements, we want the node representing the overall sequence of statements to have all of the statements as direct children.
+The output of my parser is, more or less, a *parse tree*(3).  The structure of this tree corresponds to the exact grammar productions used in the derivation of the input token sequence from the grammar's start symbol.  As such, it has lots of information that isn't really necessary.  For example, every semicolon in the input is dutifully represented as a node in the parse tree, even though semicolons have no significance semantically.  Also, recursive grammar rules for lists produce trees that are essentially linked lists.  It is nice to have a "flat" representation of such constructs; for example, if there is a sequence of statements, we want the node representing the overall sequence of statements to have all of the statements as direct children.
 
 Later stages of the compiler, such as the semantic analyzer and code generator, will want to consume a more pared-down representation of the input program, containing only the semantic information needed to translate the program into the target language.  Traditionally, the compiler will construct an *abstract syntax tree* (AST) which is a distillation of the parse tree which eliminates unnecessary nodes and simplifies recursive structures by flattening them.  Producing an AST from a parse tree is not fundamentally hard, and I give it to students in my programming languages course as [an assignment](https://ycpcs.github.io/cs340-fall2016/assign/assign07.html).  However, given the complexity of a C parse tree and the variety of syntactic constructs that can be present, I wasn't really keen on writing a lot of ad-hoc code to translate the parse tree into an AST.  Being lazy, I thought about whether there was a more declarative way to produce an AST from a parse tree.  To this end, I added two features to the parser.
 
-First, I added a "flatten" option to the function that continues a production recursively.  This causes the children of the parse node resulting from the recursive production to be copied to the parent node.  For all of the recursive list rules, this was sufficient to guarantee a flat structure.(2)
+First, I added a "flatten" option to the function that continues a production recursively.  This causes the children of the parse node resulting from the recursive production to be copied to the parent node.  For all of the recursive list rules, this was sufficient to guarantee a flat structure in the resulting tree.(4)
 
 Second, I added a `filter-tree` function that provides a view of a tree in which arbitrary nodes are hidden.  This was so easy to do that I have to show you the code:
 
@@ -114,8 +182,7 @@ Here is some code showing how "punctuation" symbols &mdash; things like parenthe
 (def c-punct-tokens (set (map #(second %) cl/c-punct-patterns)))
 (def c-punct-tokens-discard (disj c-punct-tokens :ellipsis))
 (defn c-node-filter [n]
-  (let [symbol (:symbol n)]
-    (not (contains? c-punct-tokens-discard symbol))))
+  (not (contains? c-punct-tokens-discard (:symbol n))))
 
 (def ft (node/filter-tree t c-node-filter))
 {% endhighlight %}
@@ -128,14 +195,18 @@ Ok, I said I wouldn't gush about Clojure, but what strikes me most about working
 
 ## What next
 
-What I have is a long way from being a full C parser, but I feel like I'm on the way.  Next will be dealing with typedef names, and probably implementing at least some form of preprocessor.
+What I have is a long way from being a full C parser, but I feel like I'm getting there.  Next will be dealing with typedef names, and probably implementing at least some form of preprocessor.
 
-<hr style="margin-top: 8em;">
+<hr style="margin-top: 6em;">
 Notes:
 
-(1) I am aware of [Instaparse](https://github.com/Engelberg/instaparse), which is nifty, but I wasn't convinced that I would be able to implement the symbol table hack for typedef names.  There is also [cljcc](https://cljcc.com/), which seems to be incomplete.
+(1) Interestingly, both [gcc](https://gcc.gnu.org/) and [clang](http://clang.llvm.org/) use hand-coded recursive descent parsers, motivated in large part by the desire to produce good error messages.
 
-(2) If you think about this a bit, you'll realize that it's an O(*n*<sup>2</sup>) algorithm.  I have ideas of how to do this in O(*n*) by deferring the flattening until the recursive list is complete.
+(2) I am aware of [Instaparse](https://github.com/Engelberg/instaparse), which is nifty, but I wasn't convinced that I would be able to implement the symbol table hack for typedef names.  There is also [cljcc](https://cljcc.com/), which seems to be incomplete.
+
+(3) There are a few constructs, such as type qualifier lists, that are parsed by scanning for tokens matching a predicate, rather than by actual grammar rules.  Also, most binary operators are parsed by precedence climbing.  So the parse tree does not correspond completely to any grammar.
+
+(4) If you think about this a bit, you'll realize that it's an O(*n*<sup>2</sup>) algorithm.  I have ideas about how to do this in O(*n*) by deferring the flattening until the recursive list is complete.
 
 <!-- vim:set wrap: ­-->
 <!-- vim:set linebreak: -->

@@ -42,8 +42,13 @@ div.pageheader div.tagline {
 }
 
 pre {
-	margin-left: 40px;
+	/*margin-left: 40px;*/
+	margin: 0 auto;
 	font-size: 14px;
+	overflow: auto;
+	width: 660px;
+	background: #F0F0F0;
+	padding: 10px 10px;
 }
 
 h1 {
