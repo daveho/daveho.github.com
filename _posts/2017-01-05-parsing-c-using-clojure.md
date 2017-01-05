@@ -82,7 +82,7 @@ Later stages of the compiler, such as the semantic analyzer and code generator, 
 
 First, I added a "flatten" option to the function that continues a production recursively.  This causes the children of the parse node resulting from the recursive production to be copied to the parent node.  For all of the recursive list rules, this was sufficient to guarantee a flat structure.(2)
 
-Second, I added a `filter-tree` function that provides a view of a tree in which arbitrary nodes are hidden.  This is so easy to do that I have to show you the code:
+Second, I added a `filter-tree` function that provides a view of a tree in which arbitrary nodes are hidden.  This was so easy to do that I have to show you the code:
 
 {% highlight clojure %}
 ;; Create a "filtered" view of a tree rooted at specified node.
