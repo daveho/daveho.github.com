@@ -27,4 +27,4 @@ an [open source](http://github.com/cloudcoderdotorg/CloudCoder) web-based progra
 
 [Old blog, no longer updated](http://fullofleaves.blogspot.com/)
 
-[My home page](http://faculty.ycp.edu/~dhovemey)
+[My home page](https://www.cs.jhu.edu/~daveho/)
