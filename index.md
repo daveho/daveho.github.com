@@ -8,12 +8,11 @@ tagline: "Random Thoughts and Such"
 
 Welcome to my blog!
 
-I teach computer science at [York College of Pennsylvania](http://www.ycp.edu/).
+I teach computer science at [Johns Hopkins University](https://www.jhu.edu/).
 In this blog I post about programming, education, music, electronics, and other random
 topics.
 
-I'm currently working on [CloudCoder](http://cloudcoder.org),
-an [open source](http://github.com/cloudcoderdotorg/CloudCoder) web-based programming exercise system.
+All opinions expressed here are entirely my own!
 
 # Posts
 
