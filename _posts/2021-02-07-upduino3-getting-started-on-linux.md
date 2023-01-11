@@ -17,7 +17,7 @@ system, so that it can output text and graphics on a VGA monitor.  The
 for FPGA hobbyists because
 
 * they are cheap and reasonably capable
-* the amazing source [IceStorm](http://www.clifford.at/icestorm/) toolchain
+* the amazing open source [IceStorm](http://www.clifford.at/icestorm/) toolchain
   lets you program them using entirely open source tools
 
 In this blog post I will document what I did to get an LED blink demo running
