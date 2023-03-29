@@ -7,9 +7,10 @@ title: "Sony and Monoprice Headphones: Unscientific Thoughts"
 
 Headphones are important to me. Some of the reasons:
 
-* I like listening to music (and sometimes I [create music](https://soundcloud.com/e51ffa9f))
+* I like listening to music (and I've been known to [create music](https://soundcloud.com/e51ffa9f) on occasion)
 * I watch youtube videos
-* Sometimes I make videos (which I post to my [youtube channel](https://www.youtube.com/@davehohacks))
+* Sometimes I make videos (which I post to my [youtube channel](https://www.youtube.com/@davehohacks)),
+  and editing requires listening to the audio
 * I'm on [Zoom](https://zoom.us/) quite a bit for office hours and meetings, and it's nice
   to be able to hear what people are saying
 
@@ -31,8 +32,8 @@ between headphones, and I have some opinions.
 
 Here are the headphones that I own and that I have significant experience with:
 
-1. [Sony ZX110](https://electronics.sony.com/audio/headphones/headband/p/mdrzx110-blk)
-2. [Sony ZX310](https://www.sony.com/lr/electronics/headband-headphones/mdr-zx310-zx310ap)
+1. [Sony MDR-ZX110](https://electronics.sony.com/audio/headphones/headband/p/mdrzx110-blk)
+2. [Sony MDR-ZX310](https://www.sony.com/lr/electronics/headband-headphones/mdr-zx310-zx310ap)
 3. [Monoprice 8323](https://www.monoprice.com/product?p_id=8323)
 4. [Sony MDR-7502](https://pro.sony/ue_US/products/headphones/mdr-7502)
 5. [Sony MDR-7506](https://pro.sony/ue_US/products/headphones/mdr-7506)
@@ -40,7 +41,7 @@ Here are the headphones that I own and that I have significant experience with:
 
 Without further ado, here are my thoughts!
 
-## Sony ZX110
+## Sony MDR-ZX110
 
 TODO: photo
 
@@ -48,6 +49,7 @@ So, these are super-cheap, but basically decent. It's not unknown for Best Buy t
 them for $10 or so.
 
 Good points: Sound quality is acceptable. They're comfortable.
+They fold up for compact storage.
 
 Bad points: Even though they're nominally low impedance (around 25Ω),
 they're not very loud, and I find that I need to crank the volume fairly
@@ -57,23 +59,25 @@ Conclusions: These are ok. Get yourself a
 [case](https://www.amazon.com/MDRZX110NC-MDRZX110-MDRZX110AP-Headphones-Carrying/dp/B07GXJKP8T)
 for them so that they're protected when you throw them in your laptop bag.
 
-## Sony ZX310
+## Sony MDR-ZX310
 
-TODO: photo
+<center><a href="{{baseurl}}/img/mdr-zx310.jpg"><img style="text-align: center; width: 640px;" src="{{baseurl}}/img/mdr-zx310.jpg"></a></center>
 
-To me, these sound exactly the same as the ZX110 headphones. Their list price
-is slightly higher, but I routinely find used ones in good condition for about
-$13 shipped on EBay. Importantly, they come in colors, so potentially
-they look cool. The blue ones are my favorite.
+To me, these sound exactly the same as the MDR-ZX110 headphones, and the form
+factor is exactly the same. Their list price is slightly higher, but I routinely
+find used ones in good condition for about $13 shipped on EBay. Importantly,
+they come in colors, so they look cool. The blue ones are my favorite, but I
+also have red ones (as you can see above.)
 
-So, let's consider them as equivalent to the ZX110.
+So, let's consider them as equivalent to the MDR-ZX110.
 
 ## Monoprice 8323
 
 TODO: photo
 
 I bought these a few years ago because I read reviews indicating that they
-were the best-sounding headphones for less than $50.
+were the best-sounding headphones for less than $50. (At the time of writing,
+you can get them for about $17.)
 
 Good points: They do sound great.
 
@@ -86,7 +90,7 @@ Conclusions: If you don't wear glasses, these are worth a look.
 
 ## Sony MDR-7502
 
-TODO: photo
+<center><a href="{{baseurl}}/img/mdr-7502.jpg"><img style="text-align: center; width: 640px;" src="{{baseurl}}/img/mdr-7502.jpg"></a></center>
 
 These were the first decent set of headphones I ever owned. I now have two
 pairs that I bought from
@@ -95,7 +99,7 @@ and [Amazon](https://www.amazon.com/dp/B0002F74E8).
 
 Good points: These might still be my overall favorite headphones for
 sound quality. They're quite efficient, so no problem driving them from
-a laptop or music player (unlike the ZX110s and ZX310s.) They're lightweight
+a laptop or music player (unlike the MDR-ZX110s and MDR-ZX310s.) They're lightweight
 and comfortable for extended use. They are "on-ear" rather than "over-ear",
 which I generally prefer.
 
@@ -118,7 +122,7 @@ and easy to install. For the MDR-7502, I think that most 70mm ear pads
 should work. I have used [these ones](https://www.amazon.com/dp/B093D1THX9)
 on a set of MDR-V4s, but they should work on the MDR-7502s as well.
 
-See also: The Sony MDR-V2 headphones are similar.
+See also: Sony MDR-V2 headphones are similar.
 
 ## Sony MDR-7506
 
@@ -178,8 +182,9 @@ particularly well-regarded among headphone enthusiasts, and they're
 still relatively easy to find used. (I bought mine on EBay for about
 $25.)
 
-See also: I think the Sony MDR-V202 and MDR-7504 are similar or identical.
+See also: I think Sony MDR-V202 and MDR-7504 are similar or identical.
 
 # The Verdict
 
 I think the MDR-V4 are my favorites, followed closely by the MDR-7506.
+Both have excellent sound quality and are comfortable.
