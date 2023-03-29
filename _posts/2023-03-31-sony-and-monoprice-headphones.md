@@ -61,7 +61,7 @@ for them so that they're protected when you throw them in your laptop bag.
 
 ## Sony MDR-ZX310
 
-<center><a href="{{baseurl}}/img/mdr-zx310.jpg"><img style="text-align: center; width: 640px;" src="{{baseurl}}/img/mdr-zx310.jpg"></a></center>
+<center><a href="{{baseurl}}/img/mdr-zx310.jpg"><img style="width: 640px;" src="{{baseurl}}/img/mdr-zx310.jpg"></a></center>
 
 To me, these sound exactly the same as the MDR-ZX110 headphones, and the form
 factor is exactly the same. Their list price is slightly higher, but I routinely
@@ -90,7 +90,7 @@ Conclusions: If you don't wear glasses, these are worth a look.
 
 ## Sony MDR-7502
 
-<center><a href="{{baseurl}}/img/mdr-7502.jpg"><img style="text-align: center; width: 640px;" src="{{baseurl}}/img/mdr-7502.jpg"></a></center>
+<center><a href="{{baseurl}}/img/mdr-7502.jpg"><img style="width: 640px;" src="{{baseurl}}/img/mdr-7502.jpg"></a></center>
 
 These were the first decent set of headphones I ever owned. I now have two
 pairs that I bought from
