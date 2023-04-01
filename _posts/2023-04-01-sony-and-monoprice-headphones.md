@@ -43,7 +43,7 @@ Without further ado, here are my thoughts!
 
 ## Sony MDR-ZX110
 
-TODO: photo
+<center><a href="{{baseurl}}/img/mdr-zx110.jpg"><img alt="Sony MDR-ZX110 headphones" style="width: 640px;" src="{{baseurl}}/img/mdr-zx110.jpg"></a></center>
 
 So, these are super-cheap, but basically decent. It's not unknown for Best Buy to have
 them for $10 or so.
@@ -61,7 +61,7 @@ for them so that they're protected when you throw them in your laptop bag.
 
 ## Sony MDR-ZX310
 
-<center><a href="{{baseurl}}/img/mdr-zx310.jpg"><img style="width: 640px;" src="{{baseurl}}/img/mdr-zx310.jpg"></a></center>
+<center><a href="{{baseurl}}/img/mdr-zx310.jpg"><img alt="Sony MDR-ZX310 headphones" style="width: 640px;" src="{{baseurl}}/img/mdr-zx310.jpg"></a></center>
 
 To me, these sound exactly the same as the MDR-ZX110 headphones, and the form
 factor is exactly the same. Their list price is slightly higher, but I routinely
@@ -73,13 +73,14 @@ So, let's consider them as equivalent to the MDR-ZX110.
 
 ## Monoprice 8323
 
-TODO: photo
+<center><a href="{{baseurl}}/img/monoprice-8323.jpg"><img alt="Monoprice 8323 headphones" style="width: 640px;" src="{{baseurl}}/img/monoprice-8323.jpg"></a></center>
 
 I bought these a few years ago because I read reviews indicating that they
 were the best-sounding headphones for less than $50. (At the time of writing,
 you can get them for about $17.)
 
-Good points: They do sound great.
+Good points: They do sound great. It has a 3.5mm TRS jack rather than
+a permanently attached cable, so you can use any standard aux cable.
 
 Bad points: They're fairly heavy and somewhat uncomfortable for extended use.
 Most significantly, the clamping pressure they exert makes wearing them
@@ -90,9 +91,9 @@ Conclusions: If you don't wear glasses, these are worth a look.
 
 ## Sony MDR-7502
 
-<center><a href="{{baseurl}}/img/mdr-7502.jpg"><img style="width: 640px;" src="{{baseurl}}/img/mdr-7502.jpg"></a></center>
+<center><a href="{{baseurl}}/img/mdr-7502.jpg"><img alt="Sony MDR-7502 headphones" style="width: 640px;" src="{{baseurl}}/img/mdr-7502.jpg"></a></center>
 
-These were the first decent set of headphones I ever owned. I now have two
+These were the first decent set of headphones I ever owned. I currently have two
 pairs that I bought from
 [B&amp;H](https://www.bhphotovideo.com/c/product/802634338-USE/sony_mdr_7502_headphones.html)
 and [Amazon](https://www.amazon.com/dp/B0002F74E8).
@@ -126,7 +127,7 @@ See also: Sony MDR-V2 headphones are similar.
 
 ## Sony MDR-7506
 
-TODO: photo
+<center><a href="{{baseurl}}/img/mdr-7506.jpg"><img alt="Sony MDR-7506 headphones" style="width: 640px;" src="{{baseurl}}/img/mdr-7506.jpg"></a></center>
 
 Apparently these are widely used by professional audio engineers due to their
 flat response across the range of audible frequencies.
@@ -159,7 +160,7 @@ as the MDR-7506.
 
 ## Sony MDR-V4
 
-TODO: photo
+<center><a href="{{baseurl}}/img/mdr-v4.jpg"><img alt="Sony MDR-v4 headphones" style="width: 640px;" src="{{baseurl}}/img/mdr-v4.jpg"></a></center>
 
 These are kind of a hybrid between the MDR-7502 and MDR-7506. Like the MDR-7502,
 it's on-ear. Like the MDR-7506, they fold for compact storage, and the
@@ -177,7 +178,7 @@ close to nonexistent. As mentioned above,
 [these replacements](https://www.amazon.com/dp/B093D1THX9) work
 well.
 
-Conclusions: I like these headphones! It seems that they're not
+Conclusions: I like these headphones! It seems they're not
 particularly well-regarded among headphone enthusiasts, and they're
 still relatively easy to find used. (I bought mine on EBay for about
 $25.)
