@@ -166,7 +166,7 @@ These are kind of a hybrid between the MDR-7502 and MDR-7506. Like the MDR-7502,
 it's on-ear. Like the MDR-7506, they fold for compact storage, and the
 cable attaches on one side only.
 
-Good points: Sound quality is excellent. I like the over-ear form factor.
+Good points: Sound quality is excellent. I like the on-ear form factor.
 They fold up. They don't have the issue with the cable vibrations inducing
 sound that the MDR-7502s have.
 
