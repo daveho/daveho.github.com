@@ -184,6 +184,9 @@ still relatively easy to find used. (I bought mine on EBay for about
 $25.)
 
 See also: I think Sony MDR-V202 and MDR-7504 are similar or identical.
+(Update: the MDR-V202 is actually more similar to the MDR-7502 than
+the MDR-V4. I do still believe the MDR-7504 is essentially the same
+as the MDR-V4.)
 
 # The Verdict
 
