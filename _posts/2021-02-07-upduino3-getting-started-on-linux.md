@@ -81,6 +81,13 @@ Now we can install the APIO packages needed to develop for ICE40 devices:
 apio install system ice40 scons iverilog yosys
 ```
 
+*Update November 2023*: on recent versions of `apio`, you're better off just
+doing
+
+```bash
+apio install --all
+```
+
 You will need to enable the FTDI drivers:
 
 ```bash
